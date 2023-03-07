@@ -6,7 +6,7 @@
       <var-space style="margin: 15px">
         <var-link
             href="{{url}}" target="_blank" underline="none">
-          <var-button text outline text-color="white" type="primary">📚观看教程</var-button>
+          <var-button text outline text-color="white" type="primary">📺观看教程</var-button>
         </var-link>
       </var-space>
     </template>

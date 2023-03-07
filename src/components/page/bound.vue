@@ -1,5 +1,5 @@
 <template>
-  <div class="bound var-elevation--2">
+  <div class="bound var-elevation--4" >
     <slot></slot>
   </div>
 </template>

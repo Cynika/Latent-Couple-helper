@@ -17,31 +17,33 @@
                 @change-upscale="update('upscale', $event)"
   />
 
-  <var-space justify="center" align="center">
-    <grid-layout
-        :style="{ backgroundImage: `url(${imageUrl})`, width: gridWidth+'px', height: gridHeight+'px'}"
-        class="vue-grid-layout"
-        v-model:layout="layout"
-        :col-num="colNum"
-        :row-height="rowHeight"
-        :max-rows="rowNum"
-        :margin="[1, 1]"
-        :vertical-compact="vertical_compact"
-        :is-draggable="draggable"
-        :is-resizable="resizable"
-    >
-      <template #default="{ gridItemProps }">
-        <grid-item
-            v-for="item in layout" :key="item.i" v-bind="gridItemProps"
-            :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i" :q="item.q" :p="item.p"
-            :style="{ opacity: opacity }"
-        >
-          <Area :w="item.w" :h="item.h" :q="item.q" :i="item.i" :p="item.p"
-                @remove-item="removeItem(item.i)"/>
-        </grid-item>
-      </template>
-    </grid-layout>
-  </var-space>
+  <var-loading description="LOADING" type="circle" :loading="loading">
+    <var-space justify="center" align="center">
+      <grid-layout
+          :style="{ backgroundImage: `url(${imageUrl})`, width: gridWidth+'px', height: gridHeight+'px'}"
+          class="vue-grid-layout"
+          v-model:layout="layout"
+          :col-num="colNum"
+          :row-height="rowHeight"
+          :max-rows="rowNum"
+          :margin="[1, 1]"
+          :vertical-compact="vertical_compact"
+          :is-draggable="draggable"
+          :is-resizable="resizable"
+      >
+        <template #default="{ gridItemProps }">
+          <grid-item
+              v-for="item in layout" :key="item.i" v-bind="gridItemProps"
+              :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i" :q="item.q" :p="item.p"
+              :style="{ opacity: opacity }"
+          >
+            <Area :w="item.w" :h="item.h" :q="item.q" :i="item.i" :p="item.p"
+                  @remove-item="removeItem(item.i)"/>
+          </grid-item>
+        </template>
+      </grid-layout>
+    </var-space>
+  </var-loading>
   <InfoOutput :colNum="colNum" :rowNum="rowNum" :layout="layout"/>
 </template>
 
@@ -67,6 +69,7 @@ export default {
       draggable: true,
       resizable: true,
       vertical_compact: false,
+      loading: false,
       colNum: 6,
       rowHeight: 30,
       rowNum: 6,
@@ -87,7 +90,7 @@ export default {
   },
   mounted() {
     this.index = this.layout.length;
-    this.apiImage(this.randomApiUrl)
+    this.onImageRandom()
   },
   watch: {
     gridHeight(new_gridHeight) {
@@ -108,22 +111,24 @@ export default {
     }
   },
   methods: {
-    apiImage(apiUrl) {
+    readImage(Url) {
+      this.loading = true
+      LoadingBar.start()
       const img = new Image();
-      img.src = apiUrl;
+      img.src = Url;
       img.onload = () => {
-        this.imageUrl = apiUrl
+        this.imageUrl = Url
         this.imageWidth = img.width;
         this.imageHeight = img.height;
+        this.loading = false
+        LoadingBar.finish()
       }
     },
     onImageRandom() {
-      this.apiImage(this.randomApiUrl + Math.random())
+      this.readImage(this.randomApiUrl + Math.random())
     },
-    onImageSelected(Url, width, height) {
-      this.imageUrl = Url
-      this.imageWidth = width
-      this.imageHeight = height
+    onImageSelected(Url) {
+      this.readImage(Url)
     },
     update(prop, value) {
       this[prop] = value;

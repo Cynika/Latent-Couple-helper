@@ -1,5 +1,5 @@
 <template>
-  <var-divider description="4️⃣输出:复制参数进插件"/>
+  <var-divider description="4️⃣输出:复制参数进插件(已默认添加全图)"/>
   <var-space justify="center" align="center">
     <var-input placeholder="divisions分割" readonly v-model="divisions">
       <template #append-icon>

@@ -1,12 +1,12 @@
 <template>
-  <var-divider description="3️⃣调整:布局列数,行数,透明度,放大倍数"/>
+  <var-divider description="3️⃣调整:布局放大倍数,列数,行数,透明度"/>
   <var-space justify="center" align="center">
+    <var-counter :min="0.0" :max="2.0" :step="0.1" :decimal-length="1" v-model="upscale"
+                 @change="handleChange('upscale',upscale)"/>
     <var-counter :min="1" :max="64" v-model="colNum" @change="handleChange('colNum', colNum)"/>
     <var-counter :min="1" :max="64" v-model="rowNum" @change="handleChange('rowNum', rowNum)"/>
     <var-counter :min="0.0" :max="1.0" :step="0.1" :decimal-length="1" v-model="opacity"
                  @change="handleChange('opacity', opacity)"/>
-    <var-counter :min="0.0" :max="2.0" :step="0.1" :decimal-length="1" v-model="upscale"
-                 @change="handleChange('upscale',upscale)"/>
     <var-checkbox v-model="draggable" @change="handleChange('draggable', draggable)">可移动</var-checkbox>
     <var-checkbox v-model="resizable" @change="handleChange('resizable', resizable)">可调整</var-checkbox>
   </var-space>
