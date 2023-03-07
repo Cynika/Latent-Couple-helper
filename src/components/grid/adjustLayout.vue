@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'adjustLayout',
+  name: 'AdjustLayout',
   props: {
     colNum: {type: Number, default: 3},
     rowNum: {type: Number, default: 4},

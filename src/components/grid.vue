@@ -49,9 +49,9 @@
 import {GridItem, GridLayout} from 'vue3-drr-grid-layout'
 import 'vue3-drr-grid-layout/dist/style.css'
 
-import ImagePicker from './grid/ImagePicker.vue'
-import ItemAdder from './grid/ItemAdder.vue'
-import Area from './grid/Area.vue'
+import ImagePicker from './grid/imagePicker.vue'
+import ItemAdder from './grid/itemAdder.vue'
+import Area from './grid/area.vue'
 import AdjustLayout from './grid/adjustLayout.vue'
 import InfoOutput from './grid/infoOutput.vue'
 

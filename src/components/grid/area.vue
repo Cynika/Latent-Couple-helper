@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "area",
+  name: "Area",
   props: {
     w: {type: Number, required: true},
     h: {type: Number, required: true},

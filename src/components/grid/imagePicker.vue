@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "image-picker",
+  name: "ImagePicker",
   data() {
     return {
       Url: '',
