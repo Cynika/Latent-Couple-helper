@@ -1,6 +1,6 @@
 <template>
   <var-app-bar title="Latent Couple 助手" title-position="left"
-               color="linear-gradient(90deg, rgba(72,176,221,1) 0%, black 100%)">
+               color="linear-gradient(90deg, rgba(70,180,220,1) 0%, rgba(30,65,120,1) 100%)">
 
     <template #left>
       <var-space style="margin: 15px">

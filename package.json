@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@varlet/touch-emulator": "^2.8.6",
     "@varlet/ui": "^2.8.6",
     "vue": "^3.2.45",
     "vue-clipboard3": "^2.0.0",

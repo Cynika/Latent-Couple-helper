@@ -2,7 +2,7 @@
   <var-divider description="1️⃣选择:背景图片"/>
   <var-space justify="center">
     <var-button type="primary" @click="randomImage">随机<var-icon name="help-circle"/></var-button>
-    <var-button type="primary">上传<input type="file" ref="inputFile" @change="onFileSelected"></var-button>
+    <var-button type="primary">上传<var-icon name="upload" /><input type="file" ref="inputFile" @change="onFileSelected"></var-button>
   </var-space>
 </template>
 

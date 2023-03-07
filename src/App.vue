@@ -7,11 +7,11 @@ import Tail from "./components/page/tail.vue";
 </script>
 
 <template>
-  <bar></bar>
+  <bar/>
   <bound>
-    <grid></grid>
+    <grid/>
   </bound>
-  <tail></tail>
+  <tail/>
 
 </template>
 

@@ -1,48 +1,48 @@
 <template>
-    <ImagePicker @image-random="onImageRandom" @image-selected="onImageSelected"/>
+  <ImagePicker @image-random="onImageRandom" @image-selected="onImageSelected"/>
 
-    <item-adder :prompt="prompt" :quan="quan" @add-Item="addItem"/>
+  <item-adder :prompt="prompt" :quan="quan" @add-Item="addItem"/>
 
-    <AdjustLayout :colNum="colNum"
-                  :rowNum="rowNum"
-                  :opacity="opacity"
-                  :draggable="draggable"
-                  :resizable="resizable"
-                  :upscale="upscale"
-                  @change-colNum="update('colNum', $event)"
-                  @change-rowNum="update('rowNum', $event)"
-                  @change-opacity="update('opacity', $event)"
-                  @change-draggable="update('draggable', $event)"
-                  @change-resizable="update('resizable', $event)"
-                  @change-upscale="update('upscale', $event)"
-    />
+  <AdjustLayout :colNum="colNum"
+                :rowNum="rowNum"
+                :opacity="opacity"
+                :draggable="draggable"
+                :resizable="resizable"
+                :upscale="upscale"
+                @change-colNum="update('colNum', $event)"
+                @change-rowNum="update('rowNum', $event)"
+                @change-opacity="update('opacity', $event)"
+                @change-draggable="update('draggable', $event)"
+                @change-resizable="update('resizable', $event)"
+                @change-upscale="update('upscale', $event)"
+  />
 
-    <var-space justify="center" align="center">
-      <grid-layout
-          :style="{ backgroundImage: `url(${imageUrl})`, width: gridWidth+'px', height: gridHeight+'px'}"
-          class="vue-grid-layout"
-          v-model:layout="layout"
-          :col-num="colNum"
-          :row-height="rowHeight"
-          :max-rows="rowNum"
-          :margin="[1, 1]"
-          :vertical-compact="vertical_compact"
-          :is-draggable="draggable"
-          :is-resizable="resizable"
-      >
-        <template #default="{ gridItemProps }">
-          <grid-item
-              v-for="item in layout" :key="item.i" v-bind="gridItemProps"
-              :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i" :q="item.q" :p="item.p"
-              :style="{ opacity: opacity }"
-          >
-            <Area :w="item.w" :h="item.h" :q="item.q" :i="item.i" :p="item.p"
-                  @remove-item="removeItem(item.i)"/>
-          </grid-item>
-        </template>
-      </grid-layout>
-    </var-space>
-    <InfoOutput :colNum="colNum" :rowNum="rowNum" :layout="layout"/>
+  <var-space justify="center" align="center">
+    <grid-layout
+        :style="{ backgroundImage: `url(${imageUrl})`, width: gridWidth+'px', height: gridHeight+'px'}"
+        class="vue-grid-layout"
+        v-model:layout="layout"
+        :col-num="colNum"
+        :row-height="rowHeight"
+        :max-rows="rowNum"
+        :margin="[1, 1]"
+        :vertical-compact="vertical_compact"
+        :is-draggable="draggable"
+        :is-resizable="resizable"
+    >
+      <template #default="{ gridItemProps }">
+        <grid-item
+            v-for="item in layout" :key="item.i" v-bind="gridItemProps"
+            :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i" :q="item.q" :p="item.p"
+            :style="{ opacity: opacity }"
+        >
+          <Area :w="item.w" :h="item.h" :q="item.q" :i="item.i" :p="item.p"
+                @remove-item="removeItem(item.i)"/>
+        </grid-item>
+      </template>
+    </grid-layout>
+  </var-space>
+  <InfoOutput :colNum="colNum" :rowNum="rowNum" :layout="layout"/>
 </template>
 
 <script>
@@ -141,7 +141,8 @@ export default {
           }
           if (canInsert) {
             this.layout.push({
-              x: i, y: j, w: 1, h: 1, i: this.index, q: quan, p: prompt});
+              x: i, y: j, w: 1, h: 1, i: this.index, q: quan, p: prompt
+            });
             this.index++;
             return
           }

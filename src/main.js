@@ -1,6 +1,7 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App.vue'
-import '@varlet/ui/es/style'
 import './style.css'
+import '@varlet/touch-emulator'
+
 
 createApp(App).mount('#app')

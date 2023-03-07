@@ -3,24 +3,32 @@
   <var-space justify="center" align="center">
     <var-input placeholder="divisions分割" readonly v-model="divisions">
       <template #append-icon>
-        <var-button  type="primary" size="small" @click="touchCopy(divisions)"><var-icon name="content-copy" /></var-button>
+        <var-button type="primary" size="small" @click="touchCopy(divisions)">
+          <var-icon name="content-copy"/>
+        </var-button>
       </template>
     </var-input>
     <var-input placeholder="positions位置" readonly v-model="positions">
       <template #append-icon>
-        <var-button  type="primary" size="small" @click="touchCopy(positions)"><var-icon name="content-copy" /></var-button>
+        <var-button type="primary" size="small" @click="touchCopy(positions)">
+          <var-icon name="content-copy"/>
+        </var-button>
       </template>
     </var-input>
     <var-input placeholder="weight权重" readonly v-model="weight">
       <template #append-icon>
-        <var-button  type="primary" size="small" @click="touchCopy(weight)"><var-icon name="content-copy" /></var-button>
+        <var-button type="primary" size="small" @click="touchCopy(weight)">
+          <var-icon name="content-copy"/>
+        </var-button>
       </template>
     </var-input>
   </var-space>
   <var-space justify="center" align="center">
     <var-input placeholder="tags提示词" readonly textarea v-model="tags">
       <template #append-icon>
-        <var-button  type="primary" size="small" @click="touchCopy(tags)"><var-icon name="content-copy" /></var-button>
+        <var-button type="primary" size="small" @click="touchCopy(tags)">
+          <var-icon name="content-copy"/>
+        </var-button>
       </template>
     </var-input>
   </var-space>
