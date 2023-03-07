@@ -1,5 +1,5 @@
 <template>
-  <div class="bound var-elevation--4" >
+  <div class="bound var-elevation--2">
     <slot></slot>
   </div>
 </template>
@@ -13,8 +13,8 @@ export default {
 .bound {
   width: 95%;
   height: auto;
-  margin: 15px;
-  padding: 15px;
+  margin: 10px auto;
+  padding: 5px;
   border-radius: 5px;
 }
 
