@@ -26,7 +26,7 @@ export default {
   components: {ToggleTheme},
   data() {
     return {
-      url: "https://varlet.gitee.io/varlet-ui/#/zh-CN/home",
+      url: "https://space.bilibili.com/3089593",
     };
   },
 }
