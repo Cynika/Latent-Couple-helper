@@ -4,8 +4,7 @@
 
     <template #left>
       <var-space style="margin: 15px">
-        <var-link
-            href="{{url}}" target="_blank" underline="none">
+        <var-link :href="video_url" target="_blank" underline="none">
           <var-button text outline text-color="white" type="primary">📺观看教程</var-button>
         </var-link>
       </var-space>
@@ -26,7 +25,7 @@ export default {
   components: {ToggleTheme},
   data() {
     return {
-      url: "https://space.bilibili.com/3089593",
+      video_url: "https://varlet.gitee.io/varlet-ui/#/zh-CN/home",
     };
   },
 }
