@@ -25,7 +25,7 @@ export default {
   components: {ToggleTheme},
   data() {
     return {
-      video_url: "https://varlet.gitee.io/varlet-ui/#/zh-CN/home",
+      video_url: 'https://space.bilibili.com/3089593/video',
     };
   },
 }
