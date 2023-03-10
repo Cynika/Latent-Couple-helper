@@ -40,7 +40,7 @@ export default {
   name: "tail",
   data() {
     return {
-      video_url: 'https://space.bilibili.com/3089593/video',
+      video_url: 'https://www.bilibili.com/video/BV1j24y1g749/',
       bili_url: "https://space.bilibili.com/3089593",
       github_url: 'https://github.com/Cynika/Latent-Couple-helper',
     };

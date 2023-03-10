@@ -72,7 +72,7 @@ export default {
         console.log('new_layout', new_layout)
         const divisions = ['1:1']
         const positions = ['0:0']
-        const weight = ['0.5']
+        const weight = ['0.2']
         const tags = ['background:prompt']
         for (const {x, y, w, h, q, p} of new_layout) {
           const division = `${this.rowNum}:${this.colNum}`

@@ -25,7 +25,7 @@ export default {
   components: {ToggleTheme},
   data() {
     return {
-      video_url: 'https://space.bilibili.com/3089593/video',
+      video_url: 'https://www.bilibili.com/video/BV1j24y1g749/',
     };
   },
 }

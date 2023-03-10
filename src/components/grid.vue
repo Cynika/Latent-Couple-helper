@@ -63,7 +63,7 @@ export default {
   data() {
     return {
       layout: [
-        {x: 0, y: 0, w: 2, h: 2, i: "0", q: 0.5, p: "a"},
+        {x: 0, y: 0, w: 2, h: 2, i: "0", q: 0.3, p: "a"},
         {x: 2, y: 0, w: 1, h: 1, i: "1", q: 0.3, p: "b"},
       ],
       draggable: true,
@@ -79,7 +79,7 @@ export default {
       upscale: 0.6,
 
       index: 0,
-      quan: 0.5,
+      quan: 0.3,
       prompt: "prompt",
 
       imageUrl: '',
