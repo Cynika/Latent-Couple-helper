@@ -85,7 +85,7 @@ export default {
       imageUrl: '',
       imageWidth: 640,
       imageHeight: 320,
-      randomApiUrl: 'https://api.ixiaowai.cn/api/api.php?'
+      randomApiUrl: 'https://api.yimian.xyz/img?'
     }
   },
   mounted() {
